@@ -1,0 +1,65 @@
+{
+  "patterns": {
+    "G-A|H-I|H-T|I-T|T-G": {
+      "id": "G-A|H-I|H-T|I-T|T-G",
+      "name": "Interactive Prompt Enhancement",
+      "description": "Human selects parts of drafted prompts for GenAI to refine or expand content."
+    },
+    "Aug-G|G-A|H-I|H-T|I-T|T-Aug": {
+      "id": "Aug-G|G-A|H-I|H-T|I-T|T-Aug",
+      "name": "Interactive Prompt Organization",
+      "description": "Human organize multiple text prompts into structured formats (e.g., tree) to fit the application."
+    },
+    "Aug-G|G-A|H-I|H-T|I-Aug|T-Aug": {
+      "id": "Aug-G|G-A|H-I|H-T|I-Aug|T-Aug",
+      "name": "Interaction as Instruction",
+      "description": "Human's interactions outside artifacts are included with prompts for GenAI to operate on artifacts."
+    },
+    "A-Aug|Aug-G|G-A|H-I|H-T|I-A|T-Aug": {
+      "id": "A-Aug|Aug-G|G-A|H-I|H-T|I-A|T-Aug",
+      "name": "Artifact as Instruction",
+      "description": "Human directly manipulates artifacts, which are combined with prompts as GenAI instructions."
+    },
+    "G-I|H-I|H-T|I-T|T-G": {
+      "id": "G-I|H-I|H-T|I-T|T-G",
+      "name": "AI-driven Prompt Suggestion",
+      "description": "GenAI suggests new or extended prompts from the human's initial input for human selection."
+    },
+    "G-I|H-I|H-T|I-Aug|T-G": {
+      "id": "G-I|H-I|H-T|I-Aug|T-G",
+      "name": "AI-driven Prompt Decomposition",
+      "description": "GenAI restructures prompts into fine-grained, organized forms for interactive manipulation."
+    },
+    "G-I|H-I|H-T|I-Aug|T-Aug|T-G": {
+      "id": "G-I|H-I|H-T|I-Aug|T-Aug|T-G",
+      "name": "Generative Prompt Control Widgets",
+      "description": "GenAI generates interactive widgets for fine-grained prompt control."
+    },
+    "G-A|G-I|H-I|H-T|I-A|T-G": {
+      "id": "G-A|G-I|H-I|H-T|I-A|T-G",
+      "name": "Generative Artifact Control Widgets",
+      "description": "GenAI generates widgets for humans to further manipulate or control artifact-related actions."
+    },
+    "A-G|G-I|H-I|I-T|T-Aug": {
+      "id": "A-G|G-I|H-I|I-T|T-Aug",
+      "name": "Artifact to Organized Instruction",
+      "description": "GenAI uses artifacts as starting point to generate structured prompts."
+    },
+    "A-Aug|A-G|G-I|H-I|I-T|T-Aug": {
+      "id": "A-Aug|A-G|G-I|H-I|I-T|T-Aug",
+      "name": "Artifact to Multimodal Instruction",
+      "description": "GenAI parses and integrates artifacts to construct instructions."
+    },
+    "A-G|G-I|H-I|H-T|I-Aug|T-Aug|T-G": {
+      "id": "A-G|G-I|H-I|H-T|I-Aug|T-Aug|T-G",
+      "name": "Artifact-driven Prompt Enhancement",
+      "description": "GenAI suggests actions based on contextual requests integrating artifacts and prompts."
+    },
+    "A-G|G-I|H-I|H-T|I-A|T-G": {
+      "id": "A-G|G-I|H-I|H-T|I-A|T-G",
+      "name": "Interactive Artifact Refinement",
+      "description": "GenAI analyzes artifacts and initiates interactions based on prompts."
+    }
+  },
+  "version": "1.0.0"
+}
