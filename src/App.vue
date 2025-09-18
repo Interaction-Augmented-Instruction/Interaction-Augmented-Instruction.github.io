@@ -180,7 +180,10 @@ const loadAnnotationsFromJson = async () => {
   <div id="app">
     <header class="app-header">
       <div class="header-content">
-        <h1>Interaction-Augmented Instruction</h1>
+        <div class="title-with-icon">
+          <img src="/icon.svg" alt="Project Icon" class="header-icon" />
+          <h1>Interaction-Augmented Instruction</h1>
+        </div>
         <p class="subtitle">Modeling the Synergy of Prompts and Interactions in Human-GenAI Collaboration</p>
       </div>
       
@@ -318,6 +321,19 @@ body {
 .header-content {
   padding: 20px;
   text-align: center;
+}
+
+.title-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+
+.header-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
 }
 
 .app-header h1 {
@@ -706,6 +722,15 @@ body {
 @media (max-width: 768px) {
   .header-content {
     padding: 16px;
+  }
+  
+  .title-with-icon {
+    gap: 8px;
+  }
+  
+  .header-icon {
+    width: 28px;
+    height: 28px;
   }
   
   .app-header h1 {
