@@ -1,0 +1,38 @@
+{
+  "name": "interaction-augmented-instruction-display",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "homepage": "https://interaction-augmented-instruction.github.io/",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build",
+    "deploy": "npm run build"
+  },
+  "dependencies": {
+    "@types/jszip": "^3.4.0",
+    "@vueuse/core": "^13.6.0",
+    "bibtex-parse": "^2.1.0",
+    "html2canvas": "^1.4.1",
+    "jszip": "^3.10.1",
+    "lucide-vue-next": "^0.534.0",
+    "vue": "^3.5.18"
+  },
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.2",
+    "@types/node": "^22.16.5",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vue/tsconfig": "^0.7.0",
+    "npm-run-all2": "^8.0.4",
+    "typescript": "~5.8.0",
+    "vite": "^7.0.6",
+    "vite-plugin-vue-devtools": "^8.0.0",
+    "vue-tsc": "^3.0.4"
+  }
+}
