@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue'
+import PaperPromotion from './components/PaperPromotion.vue'
 import PaperList from './components/PaperList.vue'
 import PaperDetail from './components/PaperDetail.vue'
 import PatternAnalysis from './components/PatternAnalysis.vue'
@@ -178,33 +179,24 @@ const loadAnnotationsFromJson = async () => {
 
 <template>
   <div id="app">
-    <header class="app-header">
-      <div class="header-content">
-        <div class="title-with-icon">
-          <img src="/icon.svg" alt="Project Icon" class="header-icon" />
-          <h1>Interaction-Augmented Instruction</h1>
-        </div>
-        <p class="subtitle">Modeling the Synergy of Prompts and Interactions in Human-GenAI Collaboration</p>
-      </div>
-      
-      <!-- Navigation Tabs -->
-      <nav class="nav-tabs" v-if="!loading && currentView !== 'detail'">
-        <button 
-          :class="['nav-tab', { active: currentView === 'patterns' }]"
-          @click="currentView = 'patterns'"
-        >
-          <!-- <span class="nav-icon">📊</span> -->
-          <span class="nav-text">Paradigm Analysis</span>
-        </button>
-        <button 
-          :class="['nav-tab', { active: currentView === 'list' }]"
-          @click="currentView = 'list'"
-        >
-          <!-- <span class="nav-icon">📝</span> -->
-          <span class="nav-text">Paper List</span>
-        </button>
-      </nav>
-    </header>
+    <!-- Paper Promotion Section -->
+    <PaperPromotion />
+    
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs" v-if="!loading && currentView !== 'detail'">
+      <button 
+        :class="['nav-tab', { active: currentView === 'patterns' }]"
+        @click="currentView = 'patterns'"
+      >
+        <span class="nav-text">Paradigm Analysis</span>
+      </button>
+      <button 
+        :class="['nav-tab', { active: currentView === 'list' }]"
+        @click="currentView = 'list'"
+      >
+        <span class="nav-text">Paper List</span>
+      </button>
+    </nav>
     
     <main class="app-main">
       <!-- Loading state -->
@@ -309,51 +301,10 @@ body {
   flex-direction: column;
 }
 
-.app-header {
-  background: white;
-  border-bottom: 1px solid #e0e0e0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.header-content {
-  padding: 20px;
-  text-align: center;
-}
-
-.title-with-icon {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  justify-content: center;
-}
-
-.header-icon {
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-}
-
-.app-header h1 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #1f2937;
-  margin: 0;
-}
-
-.subtitle {
-  font-size: 16px;
-  color: #6b7280;
-  margin: 8px 0 0 0;
-  font-weight: 400;
-}
-
 .nav-tabs {
   display: flex;
-  background: #f8fafc;
-  border-top: 1px solid #e5e7eb;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .nav-tab {
@@ -374,89 +325,30 @@ body {
 }
 
 .nav-tab:hover {
-  background: #f1f5f9;
+  background: #f8fafc;
   color: #374151;
 }
 
 .nav-tab.active {
   background: white;
   color: #3b82f6;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.nav-tab.active::before {
+.nav-tab.active::after {
   content: '';
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
   height: 3px;
   background: #3b82f6;
 }
 
-.nav-icon {
-  font-size: 18px;
-}
-
 .nav-text {
   font-weight: 500;
 }
 
-.readonly-toggle-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: #f3f4f6;
-  color: #374151;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  transition: all 0.2s;
-}
-
-.readonly-toggle-button:hover {
-  background: #e5e7eb;
-  border-color: #9ca3af;
-}
-
-.readonly-toggle-button.active {
-  background: #fef2f2;
-  color: #dc2626;
-  border-color: #fca5a5;
-}
-
-.readonly-toggle-button.active:hover {
-  background: #fee2e2;
-  border-color: #f87171;
-}
-
-.app-header.readonly-mode {
-  background: linear-gradient(135deg, #fef2f2, #fff);
-  border-bottom-color: #fca5a5;
-}
-
-.app-header.readonly-mode::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #dc2626, #ef4444, #dc2626);
-  animation: readonly-pulse 2s ease-in-out infinite;
-}
-
-@keyframes readonly-pulse {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
-}
-
-.user-info {
-  color: #666;
-  font-size: 14px;
+.nav-text {
   font-weight: 500;
 }
 
@@ -720,40 +612,13 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .header-content {
-    padding: 16px;
-  }
-  
-  .title-with-icon {
-    gap: 8px;
-  }
-  
-  .header-icon {
-    width: 28px;
-    height: 28px;
-  }
-  
-  .app-header h1 {
-    font-size: 24px;
-  }
-  
-  .subtitle {
-    font-size: 14px;
-  }
-  
   .nav-tab {
     padding: 12px 16px;
     font-size: 14px;
-    flex-direction: column;
-    gap: 4px;
-  }
-  
-  .nav-icon {
-    font-size: 16px;
   }
   
   .nav-text {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 
@@ -763,11 +628,7 @@ body {
   }
   
   .nav-text {
-    display: none;
-  }
-  
-  .nav-icon {
-    font-size: 20px;
+    font-size: 12px;
   }
 }
 </style>
