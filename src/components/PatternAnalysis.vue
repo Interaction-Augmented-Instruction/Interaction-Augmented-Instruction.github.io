@@ -311,7 +311,7 @@ const patternTimingMap: Record<string, string> = {
 const patternResourceMap: Record<string, string> = {
   'G-A|H-I|H-T|I-T|T-G': 'Prompt-only',
   'Aug-G|G-A|H-I|H-T|I-T|T-Aug': 'Prompt-only',
-  'Aug-G|G-A|H-I|H-T|I-Aug|T-Aug': 'Artifact-grounded',
+  'Aug-G|G-A|H-I|H-T|I-Aug|T-Aug': 'Prompt-only',
   'A-Aug|Aug-G|G-A|H-I|H-T|I-A|T-Aug': 'Artifact-grounded',
   'G-I|H-I|H-T|I-T|T-G': 'Prompt-only',
   'G-I|H-I|H-T|I-Aug|T-G': 'Prompt-only',
