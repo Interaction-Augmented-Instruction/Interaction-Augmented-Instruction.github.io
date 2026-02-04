@@ -148,11 +148,11 @@ const abstract = `Text prompt is the most common way for human-generative AI (Ge
 }
 
 .highlight-prompts {
-  color: rgb(60, 124, 34);
+  color: rgb(192, 79, 23);
 }
 
 .highlight-interactions {
-  color: rgb(192, 79, 23);
+  color: rgb(60, 124, 34);
 }
 
 .authors-section {
