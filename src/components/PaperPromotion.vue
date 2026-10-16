@@ -69,7 +69,7 @@ const abstract = `Text prompt is the most common way for human-generative AI (Ge
       <div class="venue-info">
         The ACM CHI Conference on Human Factors in Computing Systems (CHI'26)
       </div>
-      <div class="award-info">🏆Best Paper Honorable Mention</div>
+      <div class="award-info">🏆 Best Paper Honorable Mention</div>
     </div>
 
     <!-- Teaser Image -->
