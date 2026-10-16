@@ -69,6 +69,7 @@ const abstract = `Text prompt is the most common way for human-generative AI (Ge
       <div class="venue-info">
         The ACM CHI Conference on Human Factors in Computing Systems (CHI'26)
       </div>
+      <div class="award-info">🏆Best Paper Honorable Mention</div>
     </div>
 
     <!-- Teaser Image -->
@@ -174,6 +175,14 @@ const abstract = `Text prompt is the most common way for human-generative AI (Ge
   font-size: 15px;
   color: #4b5563;
   font-weight: 500;
+}
+
+.award-info {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 15px;
+  color: #b45309;
+  font-weight: 600;
 }
 
 .author-item {
